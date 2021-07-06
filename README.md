@@ -1,30 +1,76 @@
-# week5_day4
+# ExpressJS server boilerplate
 
-> Express | File upload
->
-> Express | CDN file upload
+<img src="https://buttercms.com/static/images/tech_banners/webp/ExpressJS.b7bdb4190ea4.webp" alt="ExpressJS" width="500"/>
 
+<hr>
 
-
-## Main points: file upload (local)
-
-- Los formularios con controles de tipo `file` requeren el atributo `enctype="multipart/form-data"` para procesar el envío de archivos.
-
-- La dependencia `multer` crea en el objeto `request` la propiedad `file` donde guarda los detalles de la subida tras actuar como middleware.
-
-- Las propiedades del objeto req.file son:
-
-  * fieldname
-  * originalname
-  * encoding
-  * mimetype
-  * size
-  * destination
-  * filename
-  * path
-  * buffer
+ExpressJS backend boilerplate including:
+- **Views Template**: Handlebars
+- **CSS Engine**: SCSS - Node-sass-middleware
+- **ODM**: Mongoose
+- **UI Framework**: Bootstrap 
 
 
-## Main points: file upload (CDN)
+Prepopulated with Express middlewares:
+- **Logger**: morgan
+- **HTTP POST Params**: body-parser
+- **Cookies**: cookie-parser
 
-- Las dependencias `cloudinary`, `multer-storage-cloudinary` y `multer` pueden combinarse para conectar Express al CDN Cloudinary.
+Facilities:
+- Gitignore file
+- Seeds file
+- Error handling
+
+## Directory structure
+
+````
+
+express-generator/
+├── app.js
+├── package.json
+├── .gitignoe
+├── routes
+│   │── index.js
+│   └── base.routes.js
+├── models
+│   └── user.model.js
+├── utils
+│   └── index.js
+├── middlewares
+│   └── index.js
+├── views
+│   │── layout.hbs
+│   │── errors
+│   │   │── not-found.hbs
+│   │   └── server-error.hbs
+│   │── pages
+│   │   └── index.hbs
+│   └── partials
+├── public
+│   ├── img
+│   ├── js
+│   │   └── script.js
+│   └── css
+│       └── styles.sass
+├── config
+│   │── db.config.js
+│   │── debug.config.js
+│   │── hbs.config.js
+│   │── locals.config.js
+│   │── middleware.config.js
+│   │── sass.config.js
+│   └── views.config.js
+└── bin
+    ├── seeds.js
+    └── www
+
+````
+
+## Install
+
+- Run `npm i` on the root directory
+
+## Run
+
+- Create a `.env` file on the root directory to link the MongoDB URI (`MONGODB_URI`) and port (`PORT`)
+- Run `npm run dev` command on the root directory
